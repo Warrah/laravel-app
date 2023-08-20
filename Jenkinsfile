@@ -16,6 +16,14 @@ pipeline {
 
         stage('Run Database Migrations') {
             steps {
+                script {
+            // Set your database credentials here
+            env.DB_HOST = 'localhost'
+            env.DB_PORT = '3606'
+            env.DB_DATABASE = 'laravel'
+            env.DB_USERNAME = 'laraveluser'
+            env.DB_PASSWORD = '123'
+        }
                 sh 'php artisan migrate --force'
             }
         }
