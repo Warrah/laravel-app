@@ -48,10 +48,20 @@ pipeline {
 
     post {
         success {
-            echo 'Deployment successful!'
-        }
-        failure {
-            echo 'Deployment failed!'
-        }
+        echo 'Deployment successful!'
+        slackSend(
+            channel: '#jenkins_personal', // Specify the Slack channel or user to send notifications to
+            color: 'good',
+            message: "Deployment of your laravel project was successful! See localhost:8100"
+        )
+    }
+    failure {
+        echo 'Deployment failed!'
+        slackSend(
+            channel: '#jenkins_personal', // Specify the Slack channel or user to send notifications to
+            color: 'danger',
+            message: "Deployment of your laravel project failed."
+        )
+    }
     }
 }
