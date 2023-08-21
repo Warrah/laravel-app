@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     echo 'Copying files to Nginx document root...'
-                    sh 'sudo cp -r public/* /var/www/html/laravel/public'
+                    sh 'sudo cp -r * /var/www/html/laravel/'
                 }
 
                 // Reload Nginx to apply changes
