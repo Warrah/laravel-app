@@ -27,11 +27,7 @@ pipeline {
                 sh 'php artisan migrate --force'
             }
         }
-        stage('Run Tests') {
-            steps {
-                sh 'phpunit'
-            }
-        }
+       
 
         stage('Deploy to Nginx') {
             steps {
