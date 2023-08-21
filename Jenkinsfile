@@ -52,7 +52,7 @@ pipeline {
         slackSend(
             channel: '#jenkins_personal', // Specify the Slack channel or user to send notifications to
             color: 'good',
-            message: "Deployment of your laravel project was successful! See localhost:8100"
+            message: "Deployment of your laravel project was successful! See localhost:8200"
         )
     }
     failure {
